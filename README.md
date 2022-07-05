@@ -22,9 +22,7 @@
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: 
-
 `git@github.com:dewslyse/mv-blog-app.git`
-
 This will create a directory in the name of the project folder.
 
 - Navigate to project folder using `cd mv-blog-app`
