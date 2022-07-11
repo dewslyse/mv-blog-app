@@ -8,7 +8,7 @@ RSpec.describe 'Users', type: :request do
       expect(assigns(:users)).to eq(User.all)
     end
 
-    it 'is a success' do
+    it 'returns correct response status' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -19,11 +19,15 @@ RSpec.describe 'Users', type: :request do
     it 'does not render a different template' do
       expect(response).to_not render_template('show')
     end
+
+    it 'response body returns placeholder text' do
+      expect(response.body).to include('Users')
+    end
   end
 
   describe 'GET #show' do
     before(:example) { get user_path(1) }
-    it 'is a success' do
+    it 'returns correct response status' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -33,6 +37,10 @@ RSpec.describe 'Users', type: :request do
 
     it 'does not render a different template' do
       expect(response).to_not render_template('index')
+    end
+
+    it 'response body returns placeholder text' do
+      expect(response.body).to include('User')
     end
   end
 end
