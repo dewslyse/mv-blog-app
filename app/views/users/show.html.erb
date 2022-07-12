@@ -1,1 +1,36 @@
-<h1>Selected User</h1>
+<section class="user-index">
+  <h1 class="caption">Selected User</h1>
+
+  <div class="users-container">
+    <div class="user-box">
+      <%= image_tag(@user.photo, class: "user-img") %>
+      <div class="user-details">
+        <h2><%= @user.name %></h2>
+        <p class="user-stats">Number of posts: <%= @user.posts_counter%></p>
+      </div>
+    </div>
+
+    <div class="user-bio">
+      <h3 class="user-bio-caption">Bio</h3>
+      <p><%= @user.bio %></p>
+    </div>
+
+    <div class="posts-container">
+      <% @user.recent_posts.each do |post| %>
+        <%= link_to user_post_path(@user, post), class: "post-link" do %>
+          <div class="post-card">
+            <h4 class="post-title"><%= post.title %></h4>
+            <p class="post-text"><%= post.text %></p>
+            <div class="post-stats">
+              <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="btn">
+      <%= link_to 'See all posts', user_posts_path(@user), class: "btn-link" %>
+    </div>
+  </div>
+</section>

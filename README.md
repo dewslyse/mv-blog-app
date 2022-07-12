@@ -36,9 +36,8 @@ This will create a directory in the name of the project folder.
 - Run `rails s` to start the server
 - Open `http://127.0.0.1:3000/` in your browser to use the app
 
-<!-- ### Tests
-- Run `gem install rspec`
-- Run `rspec` to run the tests -->
+### Tests
+- Run `rspec` to run the tests
 
 ## Author
 

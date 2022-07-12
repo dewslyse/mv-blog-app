@@ -26,7 +26,7 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /show' do
-    before(:example) { get user_post_path(1, 2) }
+    before(:example) { get '/users/1/posts/1' }
 
     it 'returns correct response status' do
       expect(response).to have_http_status(:ok)
