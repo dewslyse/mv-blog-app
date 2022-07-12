@@ -1,28 +1,32 @@
-<h1>List of posts for selected user</h1>
+<section class="user-index">
+  <h1 class="caption">List of posts for selected user</h1>
 
-<div>
-  <div>
-    <%= image_tag(@user.photo) %>
-  </div>
-  <div>
-    <h2><%= @user.name %></h2>
-    <p>Number of posts: <%= @user.posts_counter%></p>
-  </div>
-</div>
-
-<div>
-  <% @user.posts.each do |post| %>
-    <%= link_to user_post_path(@user, post) do %>
-      <h3><%= post.title %></h3>
-      <p><%= post.text %></p>
-      <div>
-        <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-      </div>
-    <% end %>
-    <div>
-      <% post.recent_comments.each do |comment| %>
-        <p><%= comment.user.name %>: <%= comment.text %></p>
-      <% end %>
+  <div class="users-container">
+    <div class="user-box">
+      <%= image_tag(@user.photo, class: "user-img") %>
+    <div class="user-details">
+      <h2><%= @user.name %></h2>
+      <p class="user-stats">Number of posts: <%= @user.posts_counter%></p>
     </div>
-  <% end %>
-</div>
+  </div>
+
+  <div class="posts-container">
+    <% @user.posts.each do |post| %>
+      <%= link_to user_post_path(@user, post), class: "post-link" do %>
+        <div class="post-card">
+          <h3 class="post-title"><%= post.title %></h3>
+          <p class="post-text"><%= post.text %></p>
+          <div class="post-stats">
+            <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+          </div>
+          <div class="comment">
+            <h4 class="comment-caption">Comments</h4>
+            <% post.recent_comments.each do |comment| %>
+              <p class="user-comment"><%= comment.user.name %>: <%= comment.text %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

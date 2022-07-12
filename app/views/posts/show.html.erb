@@ -1,15 +1,21 @@
-<h1>Selected post for selected user</h1>
+<section class="user-index">
+  <h1 class="caption">Selected post for selected user</h1>
 
-<div>
-  <h2><%= @post.title%> by <%= @post.user.name %></h2>
-  <p>Comments: <%= @post.comments_counter %>, LIkes: <%= @post.likes_counter %></p>
+  <div class="users-container">
+    <div class="posts-container">
+      <div class="post-card">
+        <h2 class="post-title"><%= @post.title%> by <%= @post.user.name %></h2>
+        <p class="post-stats">Comments: <%= @post.comments_counter %>, LIkes: <%= @post.likes_counter %></p>
 
-  <p><%= @post.text %></p>
-</div>
+        <p class="post-text"><%= @post.text %></p>
+      </div>
 
-<div>
-  <h3>Comments</h3>
-  <% @post.recent_comments.each do |comment| %>
-    <p><%= comment.user.name %>: <%= comment.text %></p>
-  <% end %>
-</div>
+      <div class="comment comment-show">
+        <h3 class="comment-caption">Comments</h3>
+        <% @post.recent_comments.each do |comment| %>
+          <p class="user-comment"><%= comment.user.name %>: <%= comment.text %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

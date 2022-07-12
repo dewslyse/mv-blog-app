@@ -1,15 +1,17 @@
-<h1>Index of Users</h1>
+<section class="user-index">
+  <h1 class="caption">Index of Users</h1>
 
-<div>
-  <% @users.each do |user| %>
-    <%= link_to user_path(user) do %>
-      <div>
-        <%= image_tag(user.photo) %>
-      </div>
-      <div>
-        <h2><%= user.name %></h2>
-        <p>Number of posts: <%= user.posts_counter%></p>
-      </div>
+  <div class="users-container">
+    <% @users.each do |user| %>
+      <%= link_to user_path(user), class: "card-link" do %>
+        <div class="user-box">
+          <%= image_tag(user.photo, class: "user-img") %>
+          <div class="user-details">
+            <h2><%= user.name %></h2>
+            <p class="user-stats">Number of posts: <%= user.posts_counter%></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+</section>
