@@ -1,1 +1,32 @@
 <h1>Selected User</h1>
+
+<div>
+  <div>
+    <%= image_tag(@user.photo) %>
+  </div>
+  <div>
+    <h2><%= @user.name %></h2>
+    <p>Number of posts: <%= @user.posts_counter%></p>
+  </div>
+</div>
+
+<div>
+  <h3>Bio</h3>
+  <p><%= @user.bio %></p>
+</div>
+
+<div>
+  <% @user.recent_posts.each do |post| %>
+    <%= link_to user_post_path(@user, post) do %>
+      <h4><%= post.title %></h4>
+      <p><%= post.text %></p>
+      <div>
+        <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'See all posts', user_posts_path(@user) %>
+</div>
