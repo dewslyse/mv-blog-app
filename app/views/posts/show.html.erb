@@ -17,5 +17,25 @@
         <% end %>
       </div>
     </div>
+    
+    <%= button_to 'Like button', user_post_likes_path(@post.user_id, @post) %>
+   
+    </br>
+
+    <div>
+      <h3>Add new comment</h2>
+
+      <%= form_with url: user_post_comments_path(@post.user_id, @post) do |f| %>
+        <%= f.label :text %></br>
+        <%= f.text_area :text %></br>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
+  
+  <dvi>
+    <%= link_to 'Back to posts', user_posts_path(@post.user_id) %> | 
+    <%= link_to 'Back to users', root_path %>
+  </div>
+
 </section>
