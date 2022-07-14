@@ -17,5 +17,16 @@
         <% end %>
       </div>
     </div>
+    
+    <%= button_to 'Like button', user_post_likes_path(@post.user_id, @post) %>
+   
+    </br>
+
+    <%= render '/comments/new' %>
+  </div>
+  
+  <dvi>
+    <%= link_to 'Back to posts', user_posts_path(@post.user_id) %> | 
+    <%= link_to 'Back to users', root_path %>
   </div>
 </section>
