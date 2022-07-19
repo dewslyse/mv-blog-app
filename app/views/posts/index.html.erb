@@ -21,7 +21,7 @@
           </div>
           <div class="comment">
             <h4 class="comment-caption">Comments</h4>
-            <% post.recent_comments.each do |comment| %>
+            <% post.recent_comments.includes([:user]).each do |comment| %>
               <p class="user-comment"><%= comment.user.name %>: <%= comment.text %></p>
             <% end %>
           </div>

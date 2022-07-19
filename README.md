@@ -45,6 +45,11 @@ This will create a directory in the name of the project folder.
 
 - GitHub: [@dewslyse](https://github.com/dewslyse)
 
+👤 **Teshome Kurabachew**
+
+- GitHub: [@githubhandle](https://github.com/TesheMaximillan)
+- Twitter: [@twitterhandle](https://twitter.com/TesheKura)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/teshome-kurabachew-aa8067180/)
 
 ## 🤝 Contributing
 
