@@ -28,9 +28,9 @@ RSpec.describe 'Post show page', type: :feature do
     expect(page).to have_content(@post1.likes_counter)
   end
 
-  # it 'displays the post\'s body' do
-  #   expect(page).to have_content('How to be a dev in 2020')
-  # end
+  it 'displays the post\'s body' do
+    expect(page).to have_content('How to be a dev in 2020')
+  end
 
   # it 'displays the name of each commentor' do
   #   expect(page).to have_content(@comment1.user.name)
