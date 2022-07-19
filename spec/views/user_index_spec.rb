@@ -15,7 +15,8 @@ RSpec.describe 'User index page', type: :feature do
   end
 
   it 'the number of posts each user has written' do
-    expect(page).to have_content('Number of posts')
+    Post.create(user: @user1, title: 'New post', text: 'New post description')
+    expect(page).to have_content('Number of posts: 1')
   end
 
   it 'redirects to user show page when user is clicked' do
