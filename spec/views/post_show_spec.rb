@@ -12,13 +12,13 @@ RSpec.describe 'Post show page', type: :feature do
     visit user_post_path(@user1, @user1.posts.first)
   end
 
-  # it 'displays the post\'s title' do
-  #   expect(page).to have_content('Dev in 2020')
-  # end
+  it 'displays the post\'s title' do
+    expect(page).to have_content('Dev in 2020')
+  end
 
-  # it 'displays the author\'s username' do
-  #   expect(page).to have_content(@user1.name)
-  # end
+  it 'displays the author\'s username' do
+    expect(page).to have_content(@user1.name)
+  end
 
   # it 'displays how many comments the post has' do
   #   expect(page).to have_content(@post1.comments_counter)
