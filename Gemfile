@@ -54,6 +54,9 @@ gem 'sassc-rails'
 # Eliminating N+1 Queries with the Bullet Gem
 gem 'bullet'
 
+# Add devise for user authentication
+gem 'devise'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
