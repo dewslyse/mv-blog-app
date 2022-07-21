@@ -101,6 +101,7 @@ GEM
     diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.10.0)
+    ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -148,10 +149,13 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.6-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
+    pg (1.4.1)
     pg (1.4.1-x64-mingw-ucrt)
     public_suffix (4.0.7)
     puma (5.6.4)
@@ -287,6 +291,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -314,7 +319,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.0.3p157
 
 BUNDLED WITH
    2.3.17
