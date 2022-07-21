@@ -1,4 +1,10 @@
-<h1>Welcome to the Blog App</h1>
+<div class="home">
+  <div class="home__conatiner">
+    <h1 class="home__title">Welcome to the Blog App</h1>
 
-<%= link_to 'Login', new_user_session_path %></br></br>
-<%= link_to 'Sign Up', new_user_registration_path %>
+    <div class="home__btn">
+      <%= link_to 'Login', new_user_session_path, class: 'btn' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn' %>
+    </div>
+  </div>
+</div>
