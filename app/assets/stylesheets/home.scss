@@ -1,6 +1,7 @@
 .home {
   width: 100vw;
   height: 100vh;
+
   &__container {
     width: 40%;
     height: 60%;
@@ -13,7 +14,7 @@
     &__title {
       text-align: center;
     }
-  
+
     &__btn {
       width: 100%;
       display: flex;
@@ -36,6 +37,6 @@
           background-color: rgba(0, 255, 255, 0.815);
         }
       }
-    }  
-  }  
+    }
+  }
 }
