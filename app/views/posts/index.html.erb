@@ -29,6 +29,9 @@
           <h4 class="comment-caption">Comments</h4>
           <% post.recent_comments.includes([:user]).each do |comment| %>
             <p class="user-comment"><%= comment.user.name %>: <%= comment.text %></p>
+            <% if can? :manage, comment %>
+              <%= button_to 'Delete', user_post_comments_path(@user, post, comment), method: :delete %>
+            <%end%>
           <% end %>
         </div>
         </div>
