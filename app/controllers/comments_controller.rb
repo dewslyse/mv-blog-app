@@ -10,4 +10,10 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to user_post_path(@user, @post)
   end
+
+  def destroy(comm)
+    comment = Comment.find(comm.id)
+    comment.destroy
+    redirect_to user_post_path(@user, @post)
+  end
 end
