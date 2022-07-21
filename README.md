@@ -39,7 +39,7 @@ This will create a directory in the name of the project folder.
 ### Tests
 - Run `rspec` to run the tests
 
-## Author
+## Authors
 
 👤 **@dewslyse**
 

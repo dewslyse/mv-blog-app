@@ -1,3 +1,57 @@
+/* HOME */
+.home-btn-container {
+  margin-top: 50px;
+}
+
+.home-btn {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+/* SIGN UP */
+.signup-container {
+  border: 2px solid blue;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  padding: 40px 10px 20px;
+  margin-top: 15px;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1.125rem;
+}
+
+.field-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgb(48, 48, 81);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.signup-btn,
+.login-btn {
+  background-color: #fc9dc1;
+  border-radius: 4px;
+  padding: 8px 5px;
+  color: white;
+  border: none;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
 /* INDEX */
 .user-index {
   display: flex;
