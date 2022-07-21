@@ -1,0 +1,41 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  &__container {
+    width: 40%;
+    height: 60%;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+      text-align: center;
+    }
+  
+    &__btn {
+      width: 100%;
+      display: flex;
+      margin-bottom: 50px;
+      align-self: flex-end;
+      justify-content: center;
+
+      .btn {
+        border: none;
+        border-radius: 2px;
+        background-color: aqua;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 20px;
+        text-align: center;
+        width: 200px;
+        margin: 30px;
+
+        &:hover {
+          background-color: rgba(0, 255, 255, 0.815);
+        }
+      }
+    }  
+  }  
+}
