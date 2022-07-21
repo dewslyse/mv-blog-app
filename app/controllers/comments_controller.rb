@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
   end
@@ -12,8 +14,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find(params[comments.id])
-    comment.destroy
-    redirect_to user_post_path(@user, @post)
+    @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
+    @comment.destroy
+    @post.decrement!(:comments_counter)
+    redirect_to user_post_path(current_user, @comment.post_id)
   end
 end
