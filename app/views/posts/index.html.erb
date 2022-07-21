@@ -12,26 +12,31 @@
 
   <div class="posts-container">
     <% @user.posts.each do |post| %>
-      <%= link_to user_post_path(@user, post), class: "post-link" do %>
-        <div class="post-card">
-          <h3 class="post-title"><%= post.title %></h3>
-          <p class="post-text"><%= post.text %></p>
-          <div class="post-stats">
-            <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-          </div>
-          <div class="comment">
-            <h4 class="comment-caption">Comments</h4>
-            <% post.recent_comments.includes([:user]).each do |comment| %>
-              <p class="user-comment"><%= comment.user.name %>: <%= comment.text %></p>
-            <% end %>
-          </div>
+      <div class="post-card">
+        <div class="post-header">
+          <%= link_to user_post_path(@user, post), class: "post-link" do %>
+            <h3 class="post-title"><%= post.title %></h3>
+          <% end %>
+          <% if can? :manage, post %>
+            <%= button_to 'Delete', user_post_path(@user, post), method: :delete %>
+          <% end %>
         </div>
-      <% end %>
+        <p class="post-text"><%= post.text %></p>
+        <div class="post-stats">
+          <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+        </div>
+        <div class="comment">
+          <h4 class="comment-caption">Comments</h4>
+          <% post.recent_comments.includes([:user]).each do |comment| %>
+            <p class="user-comment"><%= comment.user.name %>: <%= comment.text %></p>
+          <% end %>
+        </div>
+        </div>
     <% end %>
   </div>
 
   <div>
     <%= link_to 'Create New Post', new_user_post_path %> |
-    <%= link_to 'Back to users', root_path %>
+    <%= link_to 'Back to users', users_path %>
   </div>
 </section>

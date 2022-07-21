@@ -75,6 +75,11 @@
   text-decoration: none;
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .user-box {
   border: 2px solid blue;
   border-radius: 50px;
