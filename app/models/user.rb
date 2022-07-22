@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  def admin?
+    role == 'admin'
+  end
+
   def recent_posts
     posts.limit(3).order(created_at: :desc)
   end

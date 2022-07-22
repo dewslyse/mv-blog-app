@@ -18,15 +18,20 @@
 
     <div class="posts-container">
       <% @user.recent_posts.each do |post| %>
-        <%= link_to user_post_path(@user, post), class: "post-link" do %>
-          <div class="post-card">
-            <h4 class="post-title"><%= post.title %></h4>
-            <p class="post-text"><%= post.text %></p>
-            <div class="post-stats">
-              <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-            </div>
+        <div class="post-card">
+          <div class="post-header">
+            <%= link_to user_post_path(@user, post), class: "post-link" do %>
+              <h4 class="post-title"><%= post.title %></h4>
+            <% end %>
+            <% if can? :manage, post %>
+              <%= button_to 'Delete', user_post_path(@user, post), method: :delete %>
+            <% end %>
           </div>
-        <% end %>
+          <p class="post-text"><%= post.text %></p>
+          <div class="post-stats">
+            <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+          </div>
+        </div>
       <% end %>
     </div>
 
