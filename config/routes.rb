@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   get 'home/index'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
       end
       resources :users
       post 'signup', to: 'users#create'
-      post '/auth/login', to: 'authentication#authenticate'
+      post 'auth/login', to: 'authentication#authenticate'
     end
   end
 end

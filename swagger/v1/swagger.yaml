@@ -1,0 +1,80 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/signup":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created successfully
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - status
+  "/api/v1/users/{user_id}/posts":
+    get:
+      summary: Retrieves a user\s posts
+      tags:
+      - Users
+      parameters:
+      - user_id: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Posts found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                  email:
+                    type: string
+                  password:
+                    type: string
+                required:
+                - user_id
+                - status
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                  email:
+                    type: string
+                  password:
+                    type: string
+                required:
+                - user_id
+                - status
+        '404':
+          description: User not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
