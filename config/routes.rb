@@ -15,13 +15,16 @@ Rails.application.routes.draw do
   end
 
   # config/routes.rb
-  namespace :api, defaults: { format: :json} do
+  namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :users, only: [] do
-        resources :posts, only: [:index, :show] do
-          resources :comments, only: [:index, :show, :create]
+      resources :users do
+        resources :posts do
+          resources :comments
         end
       end
+      resources :users
+      post 'signup', to: 'users#create'
+      post '/auth/login', to: 'authentication#authenticate'
     end
   end
 end
