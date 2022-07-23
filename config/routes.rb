@@ -13,4 +13,18 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+
+  # config/routes.rb
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :users do
+        resources :posts do
+          resources :comments
+        end
+      end
+      resources :users
+      post 'signup', to: 'users#create'
+      post '/auth/login', to: 'authentication#authenticate'
+    end
+  end
 end
